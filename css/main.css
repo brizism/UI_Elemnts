@@ -73,11 +73,12 @@ h1.logo {
   #input-group #input-label {
     position: absolute;
     pointer-events: none;
-    top: 32px;
-    left: 20px;
+    color: #e2dfdf;
+    top: 27px;
+    left: 23px;
     font-size: 20px;
-    font-weight: bold;
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out;
+    letter-spacing: 1.2px; }
   #input-group input:valid + #input-label {
     top: 6px;
     left: 42px;
