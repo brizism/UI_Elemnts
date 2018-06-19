@@ -78,7 +78,7 @@ function hideQuestion(){
 
 // Transform to create shake motion
 function transform(x,y){
-  console.log(x,y)
+  //console.log(x,y)
   formBox.style.transform = `translate(${x}px, ${y}px)`;
 }
 
@@ -110,6 +110,9 @@ function inputPass(){
   setTimeout(transform, shakeTime * 0, 0, 10);
   setTimeout(transform, shakeTime * 1, 0, 0);
 
+  // Store answer in array
+  questions[position].answer = inputField.value;
+
   // Increment position
   position++;
 
@@ -126,4 +129,16 @@ function inputPass(){
     // For complete
     formComplete();
   }
+}
+
+// All fields complete - show H1 end
+function formComplete(){
+  console.log(questions)
+  const h1 = document.createElement('h1');
+  h1.classList.add('end');
+  h1.appendChild(document.createTextNode(`Thanks ${questions[0].answer}, you are registered and will get an email shortly`));
+  setTimeout(() => {
+    formBox.parentElement.appendChild(h1);
+    setTimeout(() => (h1.style.opacity = 1), 50);
+  }, 1000)
 }
