@@ -16,6 +16,13 @@ h1.logo {
   font-size: 4em;
 }
 
+h1.end {
+  position: relative;
+  color: white;
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+
 #container {
   height: 100vh;
   display: flex;
