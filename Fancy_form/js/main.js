@@ -102,4 +102,21 @@ function inputPass(){
   formBox.className = '';
   setTimeout(transform, shakeTime * 0, 0, 10);
   setTimeout(transform, shakeTime * 1, 0, 0);
+
+  // Increment position
+  position++;
+
+  // If new question, hide current and get next
+  if(questions[position]){
+    hideQuestion();
+    getQuestion(questions);
+  } else {
+    // remove if no more questions
+    hideQuestion();
+    formBox.className = 'close';
+    progress.style.width = '100%';
+
+    // For complete
+    formComplete();
+  }
 }
