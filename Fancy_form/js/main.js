@@ -24,7 +24,12 @@ const inputProgress = document.querySelector('#input-progress');
 const progress = document.querySelector('#progress-bar');
 
 // EVENTS
+
+// Get question on DOM load
 document.addEventListener('DOMContentLoaded', getQuestion(questions));
+
+// Next button click
+nextBtn.addEventListener('click', validate(questions));
 
 // FUNCTIONS
 
@@ -62,4 +67,24 @@ function hideQuestion(){
   inputProgress.style.width = 0;
   inputProgress.style.transition = 'none';
   inputGroup.style.border = null;
+};
+
+// Validate field
+function validate(arr){
+  // Make sure pattern matches if there's one
+  if(!inputField.value.match(arr[position].pattern || /.+/)){
+    inputFail();
+  } else {
+    inputPass();
+  }
+}
+
+// Field input fail
+function inputFail(){
+
+}
+
+// Field input pass
+function inputPass(){
+
 }
