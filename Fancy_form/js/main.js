@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', getQuestion(questions));
 // Next button click
 nextBtn.addEventListener('click', validate);
 
+// Input field enter click
+inputField.addEventListener('keyup', e => {
+  if(e.keyCode == 13){
+    validate();
+  }
+})
+
 // FUNCTIONS
 
 // Get question from array & add to markup
