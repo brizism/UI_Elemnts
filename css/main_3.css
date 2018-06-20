@@ -1,0 +1,24 @@
+body {
+  background: aliceblue;
+  padding: 1em;
+  font-size: 100px; }
+
+.hamburger-menu {
+  width: 1em;
+  height: 1em;
+  padding: 0.2em;
+  background-color: #0af;
+  cursor: pointer;
+  margin: 0 auto; }
+  .hamburger-menu div {
+    background-color: #fff;
+    width: 1em;
+    height: 0.2em;
+    margin-bottom: 0.2em;
+    transition: all 0.2s ease-out; }
+  .hamburger-menu.open .one {
+    transform: translateY(0.4em) rotate(45deg); }
+  .hamburger-menu.open .two {
+    opacity: 0; }
+  .hamburger-menu.open .three {
+    transform: translateY(-0.4em) rotate(-45deg); }
