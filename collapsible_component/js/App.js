@@ -8,8 +8,21 @@ class App extends React.Component {
         contacts: []
     }
 
+    
+    componentWillMount() {
+        localStorage.getItem('contacts') && this.setState({
+            contacts: JSON.parse(localStorage.getItem('contacts')),
+            isLoading: false
+        })
+    }
+    
+
     componentDidMount() {
-        this.fetchData();
+        if(!localStorage.getItem('contacts')){
+            this.fetchData();
+        } else {
+            console.log('using data from localStorage');
+        }
     }
 
     fetchData(){
@@ -39,7 +52,7 @@ class App extends React.Component {
 
     render() {
         const {isLoading, contacts} = this.state;
-        console.log(contacts)
+        //console.log(contacts)
         return (
             <div>
                 <header>
